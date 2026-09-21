@@ -92,4 +92,7 @@ public class SceneManager {
     public String getCurrentUsername() {
         return currentUsername;
     }
+    public void testSnykDoesNothing(){
+        System.out.println("This method is just to test Snyk and does nothing.");
+    }
 }
