@@ -81,6 +81,7 @@ public class PracticeController implements SceneAware {
 
     public void onLogOut() {
         cancelRecordingIfActive();
+        clearQuestionAndAnswer();
         sceneManager.setCurrentUsername(null);
         sceneManager.switchToScene("home");
     }
@@ -228,6 +229,13 @@ public class PracticeController implements SceneAware {
             labelVoiceStatus.setText(message);
         }
     }
+    
+    private void clearQuestionAndAnswer(){
+        questionOutput.clear();
+        answerInput.clear();
+        
+
+    }
 
     public void runEvaluation() {
         sceneManager.switchToScene("feedback");
@@ -236,6 +244,7 @@ public class PracticeController implements SceneAware {
             return;
         }
         feedbackController.setAnswerControls(questionOutput.getText(), "", answerInput.getText(), "practice");
+        clearQuestionAndAnswer();
         feedbackController.runEvaluation();
     }
 }

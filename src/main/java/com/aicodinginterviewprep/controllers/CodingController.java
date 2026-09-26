@@ -66,6 +66,7 @@ public class CodingController implements SceneAware {
     }
 
     public void onLogOut() {
+        clearQuestionAndCode();
         sceneManager.setCurrentUsername(null);
         sceneManager.switchToScene("home");
     }
@@ -144,6 +145,10 @@ public class CodingController implements SceneAware {
         sceneManager.switchToScene("practice");
     }
 
+    private void clearQuestionAndCode() {
+        questionOutput.clear();
+        codeEditor.clear();
+    }
     public void runEvaluation() {
         sceneManager.switchToScene("feedback");
         Object controller = sceneManager.getController("feedback");
@@ -151,6 +156,7 @@ public class CodingController implements SceneAware {
             return;
         }
         feedbackController.setAnswerControls(questionOutput.getText(), codeEditor.getText(), "", "coding");
+        clearQuestionAndCode();
         feedbackController.runEvaluation();
     }
 }
