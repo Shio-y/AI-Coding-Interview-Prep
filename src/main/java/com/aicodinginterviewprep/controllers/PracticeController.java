@@ -35,7 +35,7 @@ public class PracticeController implements SceneAware {
     public TextArea questionOutput;
     public TextArea answerInput;
 
-    @FXML public Button buttonReturn;
+    
     @FXML public Button buttonSubmitAnswer;
     @FXML public Button buttonGenerateQuestion;
     @FXML public Button buttonCodingPractice;
@@ -129,10 +129,7 @@ public class PracticeController implements SceneAware {
         runEvaluation();
     }
 
-    public void onReturn() {
-        cancelRecordingIfActive();
-        sceneManager.switchToScene("home");
-    }
+
 
     public void onCodingPractice() {
         sceneManager.switchToScene("coding");

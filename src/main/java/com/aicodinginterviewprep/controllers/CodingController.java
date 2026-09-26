@@ -34,7 +34,7 @@ public class CodingController implements SceneAware {
     public Label codePlaceholder;
 
     @FXML public StackPane codeEditorContainer;
-    @FXML public Button buttonReturn;
+   
     @FXML public Button buttonSubmitAnswer;
     @FXML public Button buttonGenerateQuestion;
     @FXML public Button buttonPractice;
@@ -139,9 +139,6 @@ public class CodingController implements SceneAware {
         runEvaluation();
     }
 
-    public void onReturn() {
-        sceneManager.switchToScene("home");
-    }
 
     public void onPractice() {
         sceneManager.switchToScene("practice");
